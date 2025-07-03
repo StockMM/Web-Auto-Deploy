@@ -1,0 +1,43 @@
+name: 'Auto Deploy'
+description: '自动化部署'
+inputs:
+  type:
+    description: '类型：web'
+    required: true
+    default: 'message'
+
+  app:
+    description: '项目名称'
+
+  branch:
+    description: '项目分支名称'
+
+  input:
+    description: '目录地址'
+
+  # message
+  content:
+    description: '发送内容'
+
+  # web
+  host:
+    description: '服务器host'
+  port:
+    description: '服务器port'
+  username:
+    description: '服务器username'
+  password:
+    description: '服务器password'
+  output:
+    description: '服务器部署地址'
+  clean:
+    description: '是否清理目标目录'
+    required: false
+    default: 'false'
+  cleanPaths:
+    description: '要清理的文件或目录列表，多个路径用逗号分隔。例如：dist,temp,logs'
+    required: false
+
+runs:
+  using: 'node22'
+  main: 'src/index.js'

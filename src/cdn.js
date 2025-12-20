@@ -30,12 +30,12 @@ module.exports = function (config) {
             process.stdout.write(d)
           })
           res.on('end', () => {
-            resolve('cdn缓存清理成功')
+            resolve('cdn缓存清除成功')
           })
         })
         req.on('error', error => {
           console.error(error)
-          reject('cdn缓存清理失败')
+          reject('cdn缓存清除失败')
         })
 
         req.write(postData)
@@ -46,12 +46,12 @@ module.exports = function (config) {
             // process.stdout.write(d)
           })
           res.on('end', () => {
-            // resolve('cdn缓存清理成功')
+            // resolve('cdn缓存清除成功')
           })
         })
         reqV2.on('error', error => {
           console.error(error)
-          // reject('cdn缓存清理失败')
+          // reject('cdn缓存清除失败')
         })
 
         reqV2.write(postDataV2)

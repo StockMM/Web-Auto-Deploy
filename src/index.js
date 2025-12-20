@@ -49,18 +49,19 @@ try {
       })
         .then(text => {
           newContent = newContent + '-' + text
-          setTimeout(() => {
-            cdn()
-              .cleanCache()
-              .then(txt => {
-                newContent = newContent + '(' + txt + ')'
-                message.sendText(newContent)
-              })
-              .catch(txt => {
-                newContent = newContent + '(' + txt + ')'
-                message.sendText(newContent)
-              })
-          }, 5000)
+          message.sendText(newContent)
+          // setTimeout(() => {
+          //   cdn()
+          //     .cleanCache()
+          //     .then(txt => {
+          //       newContent = newContent + '(' + txt + ')'
+          //       message.sendText(newContent)
+          //     })
+          //     .catch(txt => {
+          //       newContent = newContent + '(' + txt + ')'
+          //       message.sendText(newContent)
+          //     })
+          // }, 5000)
         })
         .catch(text => {
           newContent = newContent + '-' + text

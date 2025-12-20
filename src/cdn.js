@@ -5,8 +5,6 @@ const querystring = require('querystring')
 module.exports = function (config) {
   return {
     cleanCache: new Promise((resolve, reject) => {
-      // Construct the form data correctly using querystring
-      // Fixed the '3' prefix typos and removed duplicates
       const postData = querystring.stringify({
         url: '3http://stockmmm.com/, 3https://stockmmm.com/, 3http://www.stockmmm.com/, 3https://www.stockmmm.com/, 3http://www.stockmmm.com/,'
       })

@@ -2,6 +2,7 @@ const core = require('@actions/core')
 const Message = require('./helpers/message')
 const web = require('./web')
 const cdn = require('./cdn')
+const getCommitInfo = require('./helpers/git')
 
 try {
   // 应用类型暂时只支持message、web
@@ -48,7 +49,7 @@ try {
         cleanPaths: cleanPathsArray
       })
         .then(text => {
-          newContent = newContent + '-' + text
+          newContent = `${newContent}-${text}\n\n更新内容如下：${getCommitInfo()}`
           message.sendText(newContent)
           // setTimeout(() => {
           //   cdn()

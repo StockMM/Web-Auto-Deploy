@@ -8,9 +8,9 @@ const getCommitInfo = () => {
   try {
     const hash = execSync('git rev-parse --short HEAD').toString().trim()
     const author = execSync('git log -1 --pretty=format:"%an"').toString().trim()
-    const message = execSync('git log -1 --pretty=format:"%s"').toString().trim()
+    const message = execSync('git log -1 --pretty=format:"%B"').toString().trim()
 
-    return `\nCommit: ${hash}\nAuthor: ${author}\nMessage: ${message}`
+    return `\n 提交Id: ${hash}\n提交者: ${author}\n更新内容: \n${message}`
   } catch (e) {
     // Fail silently or log warning if git command fails (e.g. not a git repo)
     return ''

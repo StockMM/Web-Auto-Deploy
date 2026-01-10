@@ -10,7 +10,7 @@ const getCommitInfo = () => {
     const author = execSync('git log -1 --pretty=format:"%an"').toString().trim()
     const message = execSync('git log -1 --pretty=format:"%B"').toString().trim()
 
-    return `\n 提交Id: ${hash}\n提交者: ${author}\n更新内容: \n${message}`
+    return `\n 提交Id: ${hash}\n提交者: ${author}\n提交内容: \n${message}`
   } catch (e) {
     // Fail silently or log warning if git command fails (e.g. not a git repo)
     return ''

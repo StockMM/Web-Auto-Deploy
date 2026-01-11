@@ -49,7 +49,7 @@ try {
         cleanPaths: cleanPathsArray
       })
         .then(text => {
-          newContent = `${newContent}-${text}\nGitHub提交记录：\n${getCommitInfo()}`
+          newContent = `${newContent}-${text}\n\nGitHub提交记录：\n${getCommitInfo()}`
           message.sendText(newContent)
           // setTimeout(() => {
           //   cdn()
